@@ -1,0 +1,26 @@
+<table class="table table-hover">
+  <thead class="thead-light">
+    <th>#Order No.</th>
+    <th>Customer</th>
+    <th>P. Method</th>
+    <th>G.Total.</th>
+    <th><a class="btn btn-outline-success" routerLink="/order"><i class="fa fa-plus-square"></i> Create New</a></th>
+  </thead>
+  <tbody>
+    <tr *ngIf="errMsg" [class.text-danger]="!isValid && errMsg">
+      <td class="font-italic text text-center" colspan="5">
+        No orders to show.
+      </td>
+    </tr>
+    <tr *ngFor="let order of orderList">
+      <th (click)="openForEdit(order.id)">{{order.orderNo}}</th>
+      <td (click)="openForEdit(order.id)">{{order.customerID}}</td>
+      <td (click)="openForEdit(order.id)">{{order.pMethod}}</td>
+      <td (click)="openForEdit(order.id)">{{order.gTotal}}</td>
+      <td>
+        <a class="btn text-danger" (click)="onOrderDelete(order.id)"><i class="fa fa-trash fa-lg"></i></a>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

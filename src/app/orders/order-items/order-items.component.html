@@ -1,0 +1,49 @@
+<h4 class="display-4">Order Food Item</h4>
+<hr>
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="orderItemID" #orderItemID="ngModel" [(ngModel)]="formData.orderItemID">
+  <input type="hidden" name="orderID" #orderID="ngModel" [(ngModel)]="formData.orderID">
+  <input type="hidden" name="itemName" #itemName="ngModel" [(ngModel)]="formData.itemName">
+  <div class="form-group">
+    <label>Food Item</label>
+    <select name="itemID" #itemID="ngModel" [(ngModel)]="formData.itemID" class="form-control" 
+    (change)="updatePrice($event.target)"
+    [class.is-invalid]="!isValid && formData.itemID == 0">
+      <option value="0">-Select-</option>
+      <option *ngFor="let item of itemList" value="{{item.id}}">{{item.name}}</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Price</label>
+      <div class="input-group ">
+        <div class="input-group-prepend">
+          <div class="input-group-text">&#8377;</div>
+        </div>
+        <input name="price" #price="ngModel" [(ngModel)]="formData.price" class="form-control" readonly>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Quantity</label>
+      <input name="quantity" #quantity="ngModel" [(ngModel)]="formData.quantity" class="form-control" 
+      (keyup)="updateTotal()" [class.is-invalid]="!isValid && formData.quantity == 0">
+    </div>
+  </div>
+
+  <div class="form-group ">
+    <label>Total</label>
+    <div class="input-group ">
+      <div class="input-group-prepend">
+        <div class="input-group-text">&#8377;</div>
+      </div>
+      <input name="total" #total="ngModel" [(ngModel)]="formData.total" class="form-control" readonly>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Submit</button>
+    <button type="button" class="btn btn-outline-dark ml-1" [mat-dialog-close]><i class="fa fa-close" ></i>Close</button>
+  </div>
+
+</form>

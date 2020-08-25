@@ -1,0 +1,82 @@
+{
+  "Customer": [
+    {
+      "customerID": "11",
+      "Name": "Shreyas"
+    },
+    {
+      "customerID": "2",
+      "Name": "More"
+    }
+  ],
+  "Item": [
+    {
+      "id": "11",
+      "name": "Butter Chicken",
+      "price": "300"
+    },
+    {
+      "id": "1",
+      "name": "Garlic Naan",
+      "price": "80"
+    },
+    {
+      "id": "2",
+      "name": "Paneer Masala",
+      "price": "230"
+    },
+    {
+      "id": "3",
+      "name": "Chicken Biryani",
+      "price": "360"
+    },
+    {
+      "id": "4",
+      "name": "Veg Biryani",
+      "price": "310"
+    }
+  ],
+  "order": [
+    {
+      "orderNo": "84236",
+      "orderID": 18040,
+      "customerID": "2",
+      "pMethod": "Card",
+      "gTotal": 600,
+      "deletedOrderItemIDs": "",
+      "OrderItem": [],
+      "orderItems": [
+        {
+          "orderItemID": null,
+          "orderID": 18040,
+          "itemID": "11",
+          "price": "300",
+          "quantity": "2",
+          "total": 600
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderNo": "34515",
+      "orderID": 17488,
+      "customerID": "2",
+      "pMethod": "Card",
+      "gTotal": 720,
+      "deletedOrderItemIDs": "",
+      "OrderItem": [],
+      "orderItems": [
+        {
+          "orderItemID": null,
+          "orderID": 17488,
+          "itemID": "3",
+          "price": "360",
+          "quantity": "2",
+          "total": 720
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "OrderItem": []
+}
